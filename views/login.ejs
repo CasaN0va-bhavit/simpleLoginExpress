@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+            <input type="email" placeholder="Email" name="email">
+            <input type="password" placeholder="Password" name="password">
+            <button>Submit</button>
+            <% if (messages.error) { %>
+                <div class="error">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <%= messages.error %>
+                </div>
+            <% } %>
+        </form>
+</body>
+</html>
