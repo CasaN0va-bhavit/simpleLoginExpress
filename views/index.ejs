@@ -1,4 +1,33 @@
-Hello this is the index file
-<a href="/login">Login</a>
-<a href="/register">Register</a>
-<a href="/logout">Logout</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <style>
+        /* body {
+            height: 200vh;
+        } */
+    </style>
+</head>
+<body>
+    Hello this is the index file
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+    <a href="/logout">Logout</a>
+    <model-viewer id="model" camera-orbit="90deg" src="/planet (1).glb" shadow-intensity="1" ></model-viewer>
+</body>
+<script>
+    const model = document.getElementById("model")
+    let deg = 0;
+    setInterval(() => {
+        if (deg == 360) {
+            deg = 0
+        }
+        deg += 1
+        model.cameraOrbit = `${deg}deg`
+    }, 100)
+</script>
+</html>
+
